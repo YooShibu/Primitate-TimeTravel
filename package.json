@@ -1,0 +1,32 @@
+{
+  "name": "primitate-time-travel",
+  "version": "1.0.0",
+  "description": "Provides undo and redo for Primitate",
+  "main": "index.js",
+  "dependencies": {
+    "primitate": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.2.34",
+    "jasmine": "^2.5.2",
+    "typescript": "^2.0.3"
+  },
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YooShibu/Primitate-TimeTravel.git"
+  },
+  "keywords": [
+    "Primitate",
+    "functional"
+  ],
+  "author": "Yohei Shibuya <yoshibu.develop@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YooShibu/Primitate-TimeTravel/issues"
+  },
+  "homepage": "https://github.com/YooShibu/Primitate-TimeTravel#readme",
+  "typings": "./lib/PrimitateTT.d.ts"
+}

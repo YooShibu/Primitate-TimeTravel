@@ -1,0 +1,13 @@
+{ "compilerOptions":
+  { "module": "commonjs"
+  , "noImplicitAny": true
+  , "outDir": "./lib"
+  , "declaration": true
+  , "sourceMap": true
+  }
+
+, "files":
+  [ "./src/PrimitateTT.ts"
+  , "./src/TimeTraveler.ts"
+  ]
+}
