@@ -57,3 +57,6 @@ redo(); // console: { count: 3 }
 redo(); // console: { count: 10 }
 redo(); // listener does not called
 ```
+
+## License
+MIT
