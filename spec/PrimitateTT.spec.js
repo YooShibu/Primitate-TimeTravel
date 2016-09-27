@@ -10,7 +10,7 @@ describe("Time Travelable Store creates time traveler that", () => {
   let createAction, subscribe, applyAddon, createTimeTraveler, picker, increment;
   
   beforeEach(() => {
-    primitate = startPrimitate({ counter: { count: 0 } }, true);
+    primitate = startPrimitate({ counter: { count: 0 } });
     createAction = primitate.createAction;
     subscribe = primitate.subscribe;
     applyAddon = primitate.applyAddon;
