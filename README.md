@@ -1,6 +1,6 @@
 # Primitate-TimeTravel
 
-Primitate-TimeTravel is an addon for the [Primitate](https://github.com/YooShibu/Primitate-TimeTravel.git).
+Primitate-TimeTravel is an addon for the [Primitate](https://github.com/YooShibu/Primitate.git).
 It provies a simple way to undo and redo.
 
 
