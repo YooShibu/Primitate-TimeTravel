@@ -3,7 +3,6 @@
 const startPrimitate = require("primitate").default;
 const initTTCreator = require("../lib/PrimitateTT").default
 
-const { createAction, applyAddon } = startPrimitate({ counter: { count: 0 } });
 
 
 describe("Time Travelable Store creates time traveler that", () => {
@@ -11,7 +10,7 @@ describe("Time Travelable Store creates time traveler that", () => {
   let createAction, subscribe, applyAddon, createTimeTraveler, picker, increment;
   
   beforeEach(() => {
-    primitate = startPrimitate({ counter: { count: 0 } });
+    primitate = startPrimitate({ counter: { count: 0 } }, true);
     createAction = primitate.createAction;
     subscribe = primitate.subscribe;
     applyAddon = primitate.applyAddon;
