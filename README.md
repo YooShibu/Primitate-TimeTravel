@@ -12,7 +12,7 @@ npm install --save primitate-time-travel
 ## Example
 ``` js
 const startPrimitate = require("primitate").default;
-const initTTCreator = require("primitate-time-traveler").default;
+const initTTCreator = require("primitate-time-travel").default;
 
 
 const initialState = { counter: { count: 0 } };
