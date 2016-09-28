@@ -1,4 +1,5 @@
 # Primitate-TimeTravel
+[![Build Status](https://travis-ci.org/YooShibu/Primitate-TimeTravel.svg?branch=master)](https://travis-ci.org/YooShibu/Primitate-TimeTravel)
 
 Primitate-TimeTravel is an addon for the [Primitate](https://github.com/YooShibu/Primitate.git).
 It provies a simple way to undo and redo.
