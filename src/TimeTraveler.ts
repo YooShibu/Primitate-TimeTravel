@@ -7,7 +7,7 @@ export interface TravelerState<T> {
   memories: T[]
 } 
 
-export default class TimeTraveler<Memory, State> {
+export default class TimeTraveler<Memory, State, StateTree> {
   private index: number = 0
   private isTravering: boolean = false
   private memories: Memory[] = []
@@ -15,9 +15,9 @@ export default class TimeTraveler<Memory, State> {
   private listeners: ( (travelerState: TravelerState<Memory> ) => void)[] = []
 
   constructor(
-    memorize: (state: State) => Memory | void
+    memorize: (state: StateTree) => Memory | void
   , private remember: ( memory: Memory ) => State
-  , subscriber: ( listener: (state: State) => void ) => () => void ) {
+  , subscriber: ( listener: (state: StateTree) => void ) => () => void ) {
 
     this.unsubscribe = subscriber( state => {
       if (!this.isTravering) {

@@ -4,14 +4,14 @@ export interface TravelerState<T> {
     canBackToTheFuture: boolean;
     memories: T[];
 }
-export default class TimeTraveler<Memory, State> {
+export default class TimeTraveler<Memory, State, StateTree> {
     private remember;
     private index;
     private isTravering;
     private memories;
     private unsubscribe;
     private listeners;
-    constructor(memorize: (state: State) => Memory | void, remember: (memory: Memory) => State, subscriber: (listener: (state: State) => void) => () => void);
+    constructor(memorize: (state: StateTree) => Memory | void, remember: (memory: Memory) => State, subscriber: (listener: (state: StateTree) => void) => () => void);
     protected createTravelerState(): TravelerState<Memory>;
     subscribe(listener: (travelerState: TravelerState<Memory>) => void): () => void;
     tellMyMemories(listener: <U>(memories: Memory[], arg?: any) => U): (arg?: any) => {};

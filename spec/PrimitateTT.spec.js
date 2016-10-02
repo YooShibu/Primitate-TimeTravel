@@ -22,7 +22,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
   it("can back to the past", () => {
     const traveler = createTimeTraveler( state => state.counter )(
-      counter => counter.count
+      state => state.counter.count
     , memory => ({ count: memory }) 
     );
     const undo = traveler.backToThePast();
@@ -30,7 +30,7 @@ describe("Time Travelable Store creates time traveler that", () => {
     let results = [ { count: 0 }, { count: 1 }, { count: 2 }, { count: 3 }, { count: 2 }, { count: 1 }, { count: 0 } ];
     
     subscribe( state => state.counter )( state => {
-      expect(state).toEqual(results[0]);
+      expect(state.counter).toEqual(results[0]);
       results.shift();
     });
 
@@ -50,7 +50,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
   it("can back to the future", () => {
     const traveler = createTimeTraveler(picker)(
-      state => state.count
+      state => state.counter.count
     , memory => ({ count: memory })
     );
     const undo = traveler.backToThePast();
@@ -58,7 +58,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
     const result = [ { count: 0 }, { count: 1 }, { count: 2 }, { count: 1 }, { count: 0 }, { count: 1 }, { count: 2 } ];
     const unsubscribe = subscribe(picker)( state => {
-      expect(state).toEqual(result[0]);
+      expect(state.counter).toEqual(result[0]);
       result.shift();
     });
 
@@ -79,7 +79,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
   it("when cannot 'back to the past' or 'back to the future', store not subscribe.", () => {
     const traveler = createTimeTraveler(state => state.counter)(
-      counter => counter.count
+      state => state.counter.count
     , memory => ({ count })
     );
     const redo = traveler.backToTheFuture();
@@ -112,7 +112,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
     const results = [ { count: 0 }, { count: 1 }];
     const unsubscribe = subscribe(picker)( state => {
-      expect(state).toEqual(results[0]);
+      expect(state.counter).toEqual(results[0]);
       results.shift();
     });
 
@@ -125,7 +125,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
   it("can tell travelers state when every time the state changed.", () => {
     const traveler = createTimeTraveler(picker)(
-      counter => counter.count
+      state => state.counter.count
     , count => ({ count })
     );
 
@@ -162,7 +162,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
   it("reset memories before current travlers index when state chenged during the time travel.", () => {
     const traveler = createTimeTraveler(picker)(
-      counter => counter.count
+      state => state.counter.count
     , count => ({ count })
     );
     const undo = traveler.backToThePast();
@@ -184,7 +184,7 @@ describe("Time Travelable Store creates time traveler that", () => {
 
   it("tells us travelerself memories from the latest.", () => {
     const traveler = createTimeTraveler(picker)(
-      counter => counter.count
+      state => state.counter.count
     , count => ({ count })
     );
 

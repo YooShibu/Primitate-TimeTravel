@@ -4,7 +4,7 @@
   "description": "Provides undo and redo for Primitate",
   "main": "./lib/PrimitateTT.js",
   "dependencies": {
-    "primitate": "^2.2.1"
+    "primitate": "^2.5.0"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.34",
