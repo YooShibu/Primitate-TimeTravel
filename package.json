@@ -1,6 +1,6 @@
 {
   "name": "primitate-time-travel",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Provides undo and redo for Primitate",
   "main": "./lib/PrimitateTT.js",
   "dependencies": {
